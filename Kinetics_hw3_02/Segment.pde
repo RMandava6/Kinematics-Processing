@@ -1,24 +1,26 @@
-class Segment
+public class Segment
 {
   PVector a = new PVector();
   PVector b = new PVector();
   float len;
-  float angle = 0;
-  float sw = 2; 
-  
-  //Base constructor 
-  Segment(float x, float y, float len_, float i) //float t_)
+  float angle = 10;
+  float sw = 3; 
+   int theColor=0;
+ 
+  Segment(float x, float y, float len_, float i, int theColor) 
   {
     a = new PVector(x,y);
-    sw = 8/(i+1);
+    sw = 18/(i+1);
     len = len_;
+    this.theColor = theColor;
     calculateB();
+    
   }
   
-  //constructor for children
-   Segment(Segment parent, float len_, float i)//, float t_)
+  
+   Segment(Segment parent, float len_, float i)
   {
-    sw = 8/(i+1);
+    sw = 18/(i+1);
     a = parent.b.copy();
     len = len_;
     calculateB();
@@ -62,8 +64,20 @@ class Segment
   
   void show()
   {
-    stroke(255);
+    stroke(this.theColor);
     strokeWeight(sw);
     line(a.x,a.y, b.x,b.y);
   }
+  
+  void show(int theColor)
+  {
+    stroke(theColor);
+    strokeWeight(sw);
+    line(a.x,a.y, b.x,b.y);
+  }
+  
+  void setColor(int theColor) {
+    this.theColor = theColor; 
+  }
+  
 }
