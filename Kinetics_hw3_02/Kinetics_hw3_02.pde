@@ -40,11 +40,12 @@ void draw()
   for (Tentacle t:tentacles) {
     t.update();
     //fill(210, 56, 51, 200);
-    t.show(this.theColor);
+    //t.show(this.theColor);
+    t.show();
   }
   pos.add(vel);
   noStroke();
-  fill(190,120,0,200);
+  fill(250,0,6,150);
   ellipse(pos.x, pos.y, 52, 52);
   
   if(pos.x>width|| pos.x<0)
@@ -78,6 +79,6 @@ void mouseClicked() {
 void loadSpaceImage()
 {
   PImage img;
-  img = loadImage("/Users/ramya/Documents/GitHub/Kinematics-Processing/Data/Imgspace.jpg");
+  img = loadImage("/Users/ramya/Documents/GitHub/Kinematics-Processing/Data/Space.jpg");
   image(img, 0, 0);   
 }
