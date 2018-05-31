@@ -6,14 +6,14 @@ public class Tentacle
 {
   Segment[] segments = new Segment[15];
   PVector base;
-  float len = 100;
+  float len = 60;
   private int numberOfSegments;
   
 
   public Tentacle(float x, float y, int numberOfSegments)
   {
     base = new PVector(x,y);
-    this.numberOfSegments = Math.max(numberOfSegments/2, 1);
+    this.numberOfSegments = Math.max(numberOfSegments, 1);
     segments = new Segment[this.numberOfSegments];
     segments[0] = new Segment(300, 100, len, 0, 216);
     for (int i=1; i<segments.length; i++)
@@ -53,7 +53,8 @@ public class Tentacle
   {
       for(Segment s: segments)
       {
-        s.setColor(205);
+        //s.setColor(210);
+        fill(210, 56, 51, 200);
         s.show();
       }
   }
@@ -62,7 +63,8 @@ public class Tentacle
   {
       for(Segment s: segments)
       {
-        s.setColor(theColor);
+        //s.setColor(theColor);
+        fill(210, 56, 51, 200);
         s.show();
       }
   }
