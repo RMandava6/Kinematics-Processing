@@ -1,4 +1,4 @@
-class Segment
+public class Segment
 {
   PVector a = new PVector();
   PVector b = new PVector();
@@ -6,8 +6,8 @@ class Segment
   float angle = 0;
   float sw = 2; 
   
-  //Base constructor 
-  Segment(float x, float y, float len_, float i) //float t_)
+ 
+  Segment(float x, float y, float len_, float i) 
   {
     a = new PVector(x,y);
     sw = 8/(i+1);
@@ -15,8 +15,8 @@ class Segment
     calculateB();
   }
   
-  //constructor for children
-   Segment(Segment parent, float len_, float i)//, float t_)
+  
+   Segment(Segment parent, float len_, float i)
   {
     sw = 8/(i+1);
     a = parent.b.copy();
