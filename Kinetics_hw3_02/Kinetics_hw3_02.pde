@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 private List<Tentacle> tentacles;
 private int theColor;
-private int backgroundColor;
+//private int backgroundColor;
 
 private PVector pos;
 private PVector vel;
