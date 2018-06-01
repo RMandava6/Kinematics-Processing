@@ -3,6 +3,7 @@ public class Segment
   PVector a = new PVector();
   PVector b = new PVector();
   float len;
+
   float angle = 10;
   float sw = 30; 
 
@@ -13,13 +14,28 @@ public class Segment
     sw = 30/(i+1);
     len = len_;
     calculateB();
-    
+
+  float angle = 0;
+  float sw = 2; 
+  
+ 
+  Segment(float x, float y, float len_, float i) 
+  {
+    a = new PVector(x,y);
+    sw = 8/(i+1);
+    len = len_;
+    calculateB();
+
   }
   
   
    Segment(Segment parent, float len_, float i)
   {
+
     sw = 30/(i+1);
+
+    sw = 8/(i+1);
+
     a = parent.b.copy();
     len = len_;
     calculateB();
@@ -63,6 +79,7 @@ public class Segment
   
   void show()
   {
+
     stroke(23, 192, 227, 180);
     strokeWeight(sw);
     line(a.x,a.y, b.x,b.y);
@@ -70,3 +87,10 @@ public class Segment
   
   
 }//end of class
+
+    stroke(255);
+    strokeWeight(sw);
+    line(a.x,a.y, b.x,b.y);
+  }
+}
+
