@@ -34,40 +34,29 @@ public class Tentacle
       {
         segments[i].follow(segments[i+1]);
         segments[i].update();
-      }
+      }//end of for
       
       segments[0].setA(base);
       
       for(int i=1; i < total; i++)
       {
         segments[i].setA(segments[i-1].b);
-      }
+      }//end of for
       
       for (int i=0; i<total; i++)
       {
         segments[i].show();
-      }
-  }
+      }//end of for
+  }// end of update()
   
   void show()
   {
       for(Segment s: segments)
       {
-        //s.setColor(210);
         fill(210, 56, 51, 200);
         s.show();
       }
-  }
-  
-  //void show(int theColor)
-  //{
-  //    for(Segment s: segments)
-  //    {
-  //      //s.setColor(theColor);
-  //      fill(210, 56, 51, 200);
-  //      s.show();
-  //    }
-  //}
+  }// end of show()
   
   
 }
